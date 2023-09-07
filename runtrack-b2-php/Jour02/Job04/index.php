@@ -39,13 +39,39 @@ try {
     // Utilisation de la fonction pour récupérer les données des étudiants
     $allStudentsGrades = find_all_students_grades($conn);
 
-    // Afficher les résultats
-    foreach ($allStudentsGrades as $student) {
-        echo "Email: " . $student['email'] . "<br>";
-        echo "Nom Complet: " . $student['fullname'] . "<br>";
-        echo "Nom de Promotion: " . $student['name'] . "<br><br>";
-    }
+    // // Afficher les résultats
+    // foreach ($allStudentsGrades as $student) {
+    //     echo "Email: " . $student['email'] . "<br>";
+    //     echo "Nom Complet: " . $student['fullname'] . "<br>";
+    //     echo "Nom de Promotion: " . $student['name'] . "<br><br>";
+    // }
 } catch (PDOException $e) {
     echo "Erreur de connexion à la base de données : " . $e->getMessage();
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Étudiants</title>
+</head>
+<body>
+    <h1>Liste des Étudiants</h1>
+    
+    <!-- Tableau HTML pour afficher les étudiants et leurs promotions -->
+    <table border="1">
+        <tr>
+            <th>Email</th>
+            <th>Nom Complet</th>
+            <th>Promotion</th>
+        </tr>
+        <?php foreach ($allStudentsGrades as $student) { ?>
+            <tr>
+                <td><?php echo $student['email']; ?></td>
+                <td><?php echo $student['fullname']; ?></td>
+                <td><?php echo $student['name']; ?></td>
+            </tr>
+        <?php } ?>
+    </table>
+</body>
+</html>
