@@ -44,10 +44,58 @@ try {
         return $conn->lastInsertId();
     }
 
-    // Exemple d'utilisation de la fonction pour insérer un nouvel étudiant
-    $newStudentId = insert_student($conn, 'Benoit Bremaud', '1981-05-22', 'benoit.bremaud@mail.com', 1, 'Male');
-    echo "Nouvel étudiant inséré avec l'ID : " . $newStudentId;
+    // Traitement du formulaire
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $fullname = $_POST['input-fullname'];
+        $birthdate = $_POST['input-birthdate'];
+        $email = $_POST['input-email'];
+        $grade_id = $_POST['input-grade_id'];
+        $gender = $_POST['input-gender'];
+
+        // Utilisation de la fonction pour insérer un nouvel étudiant
+        $newStudentId = insert_student($conn, $fullname, $birthdate, $email, $grade_id, $gender);
+        echo "Nouvel étudiant inséré avec l'ID : " . $newStudentId;
+        
+        
+        // // Exemple d'utilisation de la fonction pour insérer un nouvel étudiant
+        // $newStudentId = insert_student($conn, 'Benoit Bremaud', '1981-05-22', 'benoit.bremaud@mail.com', 1, 'Male');
+        
+        echo "Nouvel étudiant inséré avec l'ID : " . $newStudentId;
+    }
 } catch (PDOException $e) {
     echo "Erreur de connexion à la base de données : " . $e->getMessage();
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter un Étudiant</title>
+</head>
+<body>
+    <h1>Ajouter un Étudiant</h1>
+    
+    <!-- Formulaire pour ajouter un nouvel étudiant -->
+    <form method="post" action="index.php">
+        <label for="input-fullname">Nom complet :</label>
+        <input type="text" id="input-fullname" name="input-fullname" required><br>
+
+        <label for="input-birthdate">Date de Naissance :</label>
+        <input type="date" id="input-birthdate" name="input-birthdate" required><br>
+
+        <label for="input-email">Email :</label>
+        <input type="email" id="input-email" name="input-email" required><br>
+
+        <label for="input-grade_id">Grade ID :</label>
+        <input type="number" id="input-grade_id" name="input-grade_id" required><br>
+
+        <label for="input-gender">Genre :</label>
+        <select id="input-gender" name="input-gender" required>
+            <option value="male">Homme</option>
+            <option value="female">Femme</option>
+        </select><br>
+
+        <button type="submit">Ajouter Étudiant</button>
+    </form>
+</body>
+</html>
