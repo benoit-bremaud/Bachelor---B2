@@ -31,17 +31,48 @@ try {
         return $student;
     }
 
-    // Appelez la fonction pour récupérer un étudiant en fonction de l'email
-    $emailToFind = 'manon11@muller.org'; // Remplacez ceci par l'email que vous recherchez
-    $foundStudent = find_one_student($conn, $emailToFind);
+    // Traitement du formulaire
+    if (isset($_GET['input-email-student'])) {
+        $emailToFind = $_GET['input-email-student'];
+        $foundStudent = find_one_student($conn, $emailToFind);
 
-    if ($foundStudent) {
-        // Affichez les données de l'étudiant trouvé
-        print_r($foundStudent);
-    } else {
-        echo "Aucun étudiant trouvé avec cet email.";
+        if ($foundStudent) {
+            // Affichez les données de l'étudiant trouvé
+            print_r($foundStudent);
+        } else {
+            echo "Aucun étudiant trouvé avec cet email.";
+        }
     }
 } catch (PDOException $e) {
     echo "Erreur de connexion à la base de données : " . $e->getMessage();
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rechercher un Étudiant</title>
+</head>
+<body>
+    <h1>Rechercher un Étudiant par Email</h1>
+    
+    <!-- Formulaire pour rechercher un étudiant par email -->
+    <form method="get" action="index.php">
+        <label for="input-email-student">Email de l'étudiant :</label>
+        <input type="text" id="input-email-student" name="input-email-student" required>
+        <button type="submit">Rechercher</button>
+    </form>
+    <!-- Afficher les informations de l'étudiant trouvé -->
+    <?php if (isset($foundStudent)): ?>
+        <h2>Résultat de la recherche :</h2>
+        <?php if ($foundStudent): ?>
+            <p>Nom : <?php echo $foundStudent['fullname']; ?></p>
+            <p>Email : <?php echo $foundStudent['email']; ?></p>
+            <p>Date de Naissance : <?php echo $foundStudent['birthdate']; ?></p>
+            <!-- Ajoutez d'autres champs ici selon votre structure de table -->
+        <?php else: ?>
+            <p>Aucun étudiant trouvé avec cet email.</p>
+        <?php endif; ?>
+    <?php endif; ?>
+</body>
+</html>
