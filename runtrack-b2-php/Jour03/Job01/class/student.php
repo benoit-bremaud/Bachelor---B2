@@ -1,6 +1,7 @@
 <?php
 
 class Student {
+    // Propriétés privées de la classe Student
     private $id;
     private $grade_id;
     private $email;
@@ -8,7 +9,15 @@ class Student {
     private $birthdate;
     private $gender;
 
-    public function __construct($id = null, $grade_id = null, $email = "", $fullname = "", $birthdate = null, $gender = "") {
+    // Constructeur avec des paramètres optionnels
+    public function __construct(
+        int $id = null,
+        int $grade_id = null,
+        string $email = null,
+        string $fullname = null,
+        string $birthdate = null,
+        string $gender = null
+    ) {
         $this->id = $id;
         $this->grade_id = $grade_id;
         $this->email = $email;
@@ -17,53 +26,64 @@ class Student {
         $this->gender = $gender;
     }
 
-    // Getters and setters for class properties
-
-    public function getId() {
+    // Getter pour l'ID de l'étudiant
+    public function getId(): ?int {
         return $this->id;
     }
 
-    public function setId($id) {
-        $this->id = $id;
-    }
-
-    public function getGradeId() {
+    // Getter pour l'ID du grade de l'étudiant
+    public function getGradeId(): ?int {
         return $this->grade_id;
     }
 
-    public function setGradeId($grade_id) {
+    // Setter pour l'ID du grade de l'étudiant
+    public function setGradeId(int $grade_id): static {
         $this->grade_id = $grade_id;
+        return $this;
     }
 
-    public function getEmail() {
+    // Getter pour l'adresse e-mail de l'étudiant
+    public function getEmail(): ?string {
         return $this->email;
     }
 
-    public function setEmail($email) {
+    // Setter pour l'adresse e-mail de l'étudiant
+    public function setEmail(string $email): static {
         $this->email = $email;
+        return $this;
     }
 
-    public function getFullname() {
+    // Getter pour le nom complet de l'étudiant
+    public function getFullname(): ?string {
         return $this->fullname;
     }
 
-    public function setFullname($fullname) {
+    // Setter pour le nom complet de l'étudiant
+    public function setFullname(string $fullname): static {
         $this->fullname = $fullname;
+        return $this;
     }
 
-    public function getBirthdate() {
+    // Getter pour la date de naissance de l'étudiant
+    public function getBirthdate(): ?string {
         return $this->birthdate;
     }
 
-    public function setBirthdate($birthdate) {
+    // Setter pour la date de naissance de l'étudiant
+    public function setBirthdate(string $birthdate): static {
         $this->birthdate = $birthdate;
+        return $this;
     }
 
-    public function getGender() {
+    // Getter pour le genre de l'étudiant
+    public function getGender(): ?string {
         return $this->gender;
     }
 
-    public function setGender($gender) {
+    // Setter pour le genre de l'étudiant
+    public function setGender(string $gender): static {
         $this->gender = $gender;
+        return $this;
     }
 }
+?>
