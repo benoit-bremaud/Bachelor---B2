@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <!-- Include the external JavaScript file -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Student Registration</h1>
+    <!-- Create a form with id "form-add-student" -->
+    <form id="form-add-student">
+        <label for="student-mail">Email:</label>
+        <!-- Input for email with id "student-mail" and "required" attribute -->
+        <input type="email" id="student-mail" required><br>
+
+        <label for="student-fullname">Full Name:</label>
+        <!-- Input for full name with id "student-fullname" and "required" attribute -->
+        <input type="text" id="student-fullname" required><br>
+
+        <label for="student-gender">Gender:</label>
+        <!-- Select element for gender with id "student-gender" and "required" attribute -->
+        <select id="student-gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br>
+
+        <label for="student-grade">Grade:</label>
+        <!-- Select element for grade with id "student-grade" and "required" attribute -->
+        <select id="student-grade" required>
+            <option value="1">Grade 1</option>
+            <option value="2">Grade 2</option>
+            <option value="3">Grade 3</option>
+        </select><br>
+
+        <label for="student-birthdate">Date of Birth:</label>
+        <!-- Input for date of birth with id "student-birthdate" and "required" attribute -->
+        <input type="date" id="student-birthdate" required><br>
+
+        <!-- Submit button with id "submit-btn" -->
+        <input type="submit" id="submit-btn" value="Register">
+    </form>
+</body>
+</html>
