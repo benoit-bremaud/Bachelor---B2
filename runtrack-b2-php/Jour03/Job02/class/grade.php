@@ -1,59 +1,61 @@
 <?php
 
 class Grade {
-    // Attributs privés pour représenter les données de la table 'grade'
     private $id;
-    private $room_id;
+    private $roomId;
     private $name;
     private $year;
 
     // Constructeur avec des paramètres optionnels
-    public function __construct($id = null, $room_id = null, $name = null, $year = null) {
-        // Initialisation des attributs avec les valeurs passées en paramètre
+    public function __construct(
+        int $id = null,
+        int $roomId = null,
+        string $name = null,
+        string $year = null
+    ) {
         $this->id = $id;
-        $this->room_id = $room_id;
+        $this->roomId = $roomId;
         $this->name = $name;
         $this->year = $year;
     }
 
-    // Fonction pour obtenir l'ID du grade
-    public function getId() {
+    // Getter pour l'ID de la note
+    public function getId(): ?int {
         return $this->id;
     }
 
-    // Fonction pour obtenir l'ID de la salle associée au grade
-    public function getRoomId() {
-        return $this->room_id;
+    // Getter pour l'ID de la salle associée à la note
+    public function getRoomId(): ?int {
+        return $this->roomId;
     }
 
-    // Fonction pour obtenir le nom du grade
-    public function getName() {
+    // Setter pour l'ID de la salle associée à la note
+    public function setRoomId(int $roomId): self {
+        $this->roomId = $roomId;
+        return $this;
+    }
+
+    // Getter pour le nom de la note
+    public function getName(): ?string {
         return $this->name;
     }
 
-    // Fonction pour obtenir l'année du grade
-    public function getYear() {
+    // Setter pour le nom de la note
+    public function setName(string $name): self {
+        $this->name = $name;
+        return $this;
+    }
+
+    // Getter pour l'année de la note
+    public function getYear(): ?string {
         return $this->year;
     }
 
-    // Fonction pour définir l'ID du grade
-    public function setId($id) {
-        $this->id = $id;
-    }
-
-    // Fonction pour définir l'ID de la salle associée au grade
-    public function setRoomId($room_id) {
-        $this->room_id = $room_id;
-    }
-
-    // Fonction pour définir le nom du grade
-    public function setName($name) {
-        $this->name = $name;
-    }
-
-    // Fonction pour définir l'année du grade
-    public function setYear($year) {
+    // Setter pour l'année de la note
+    public function setYear(string $year): self {
         $this->year = $year;
+        return $this;
     }
 }
+
 ?>
