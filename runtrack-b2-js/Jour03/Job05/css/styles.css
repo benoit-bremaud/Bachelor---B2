@@ -1,0 +1,20 @@
+/* Réglages globaux pour le corps de la page */
+body {
+    text-align: center; /* Centre le contenu horizontalement */
+}
+
+/* Styles pour la section du jeu */
+#jeu {
+    display: grid; /* Utilise la disposition en grille pour la grille de jeu */
+    grid-template-columns: repeat(3, 1fr); /* Crée 3 colonnes égales dans la grille */
+    width: 300px; /* Définit la largeur de la grille */
+    margin: auto; /* Centre la grille horizontalement sur la page */
+}
+
+/* Styles pour chaque case du jeu */
+.case {
+    border: 1px solid black; /* Ajoute une bordure noire autour de chaque case */
+    height: 100px; /* Définit la hauteur de chaque case */
+    line-height: 100px; /* Pour centrer la croix ou le rond verticalement */
+    font-size: 60px; /* Définit la taille de police pour X ou O au centre de la case */
+}
