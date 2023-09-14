@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+
+    <!-- L'appel au fichier JavaScript est placé en haut du document avec l'attribut "defer" -->
+    <script src="./script.js" type="module" defer></script>
+
+    <!-- Ajout de la règle CSS pour le fond noir -->
+    <style>
+        body {
+            background-color: black;
+            color: white; /* Pour changer la couleur du texte pour une meilleure lisibilité */
+        }
+    </style>
+</head>
+<body>
+    <h1>Jeux du Morpion (Tic Tac Toe)</h1>
+
+    <!-- Section pour afficher le joueur actuel -->
+    <section>
+        <h2>Joueur Actuel</h2>
+        <p id="current-player">Joueur actuel : <span id="current-player-symbol">X</span></p>
+    </section>
+
+    <!-- Section pour afficher les messages de fin de partie -->
+    <section>
+        <h2>Messages</h2>
+        <p id="message"></p>
+    </section>
+
+    <!-- Section pour indiquer le nombre de tours -->
+    <section>
+        <h2>Tours de Jeu</h2>
+        <p id="turn">Tour : 0</p>
+    </section>
+
+    <!-- Section pour lancer une nouvelle partie -->
+    <section>
+        <h2>Nouvelle Partie</h2>
+        <button id="play">Nouvelle partie</button>
+    </section>
+
+    <!-- Section pour afficher le plateau de jeu -->
+    <section>
+        <h2>Plateau de Jeu</h2>
+        <div id="board">
+            <!-- Vous devrez générer dynamiquement les cellules du plateau ici -->
+        </div>
+    </section>
+</body>
+</html>
