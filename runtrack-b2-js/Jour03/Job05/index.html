@@ -1,54 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
+    <!-- Configuration de la page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe Game</title>
+    <title>TicTacToe</title>
 
-    <!-- L'appel au fichier JavaScript est placé en haut du document avec l'attribut "defer" -->
-    <script src="script.js" defer></script>
-
-    <!-- Ajout de la règle CSS pour le fond noir -->
-    <style>
-        body {
-            background-color: black;
-            color: white; /* Pour changer la couleur du texte pour une meilleure lisibilité */
-        }
-    </style>
+    <!-- Inclusion du fichier de styles CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Jeux du Morpion (Tic Tac Toe)</h1>
-
-    <!-- Section pour afficher le joueur actuel -->
-    <section>
-        <h2>Joueur Actuel</h2>
-        <p id="current-player">Joueur actuel : X</p>
+    <!-- Titre du jeu -->
+    <h1>Tic Tac Toe</h1>
+    <!-- Section du jeu -->
+    <section id="jeu">
+        <!-- Grille de jeu (9 cases) -->
+        <div data-index="0" class="case"></div>
+        <div data-index="1" class="case"></div>
+        <div data-index="2" class="case"></div>
+        <div data-index="3" class="case"></div>
+        <div data-index="4" class="case"></div>
+        <div data-index="5" class="case"></div>
+        <div data-index="6" class="case"></div>
+        <div data-index="7" class="case"></div>
+        <div data-index="8" class="case"></div>
     </section>
+    <!-- Message de fin de jeu -->
+    <h2></h2>
+    <!-- Bouton pour recommencer la partie -->
+    <button id="recommencer">Recommencer</button>
 
-    <!-- Section pour afficher les messages de fin de partie -->
-    <section>
-        <h2>Messages</h2>
-        <p id="message"></p>
-    </section>
-
-    <!-- Section pour indiquer le nombre de tours -->
-    <section>
-        <h2>Tours de Jeu</h2>
-        <p id="turn">Tour : 0</p>
-    </section>
-
-    <!-- Section pour lancer une nouvelle partie -->
-    <section>
-        <h2>Nouvelle Partie</h2>
-        <button id="play">Nouvelle partie</button>
-    </section>
-
-    <!-- Section pour afficher le plateau de jeu -->
-    <section>
-        <h2>Plateau de Jeu</h2>
-        <div id="board">
-            <!-- Vous devrez générer dynamiquement les cellules du plateau ici -->
-        </div>
-    </section>
+    <!-- Inclusion du fichier JavaScript pour la logique du jeu -->
+    <script src="js/scripts.js"></script>
 </body>
 </html>
