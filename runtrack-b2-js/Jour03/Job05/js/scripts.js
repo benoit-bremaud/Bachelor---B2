@@ -18,8 +18,10 @@ const conditionsVictoire = [
 
 // Fonction pour afficher le message de victoire
 const gagne = () => `Le joueur ${joueurActif} a gagné`
+
 // Fonction pour afficher le message d'égalité
 const egalite = () => "Egalité"
+
 // Fonction pour afficher le message du tour du joueur
 const tourJoueur = () => `C'est au tour du joueur ${joueurActif}`
 
