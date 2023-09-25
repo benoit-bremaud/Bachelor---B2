@@ -20,6 +20,7 @@
       [excludeDays]="[0, 6]"
       [activeDayIsOpen]="activeDayIsOpen"
       (dayClicked)="dayClicked($event.day)"
+      (eventClicked)="eventClicked($event)"
       locale="fr"
     ></mwl-calendar-month-view>
     <mwl-calendar-week-view
@@ -30,6 +31,7 @@
       [excludeDays]="[0, 6]"
       [dayStartHour]="9"
       [dayEndHour]="18"
+      (eventClicked)="eventClicked($event)"
     ></mwl-calendar-week-view>
     <mwl-calendar-day-view 
       *ngSwitchCase="CalendarView.Day" 
@@ -38,6 +40,7 @@
       locale="fr"
       [dayStartHour]="9"
       [dayEndHour]="18"
+      (eventClicked)="eventClicked($event)"
     ></mwl-calendar-day-view>
   </span>
 </div>

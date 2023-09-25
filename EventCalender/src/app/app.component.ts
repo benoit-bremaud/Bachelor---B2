@@ -46,4 +46,8 @@ export class AppComponent {
     }
   }
 
+  eventClicked(event: any) {
+    console.log(event);
+  }
+
 }
