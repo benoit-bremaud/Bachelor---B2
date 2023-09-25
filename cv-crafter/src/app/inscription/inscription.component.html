@@ -1,0 +1,47 @@
+<p>connexion works!</p>
+
+<!-- inscription.component.html -->
+
+<div>
+    <h2>Inscription</h2>
+    <form [formGroup]="inscriptionForm" (ngSubmit)="onSubmit()">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" formControlName="firstName">
+        <div *ngIf="inscriptionForm.get('firstName')?.hasError('required')">
+            First Name is required
+        </div>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" formControlName="lastName">
+        <div *ngIf="inscriptionForm.get('lastName')?.hasError('required')">
+            Last Name is required
+        </div>
+        
+        <label for="email">Email:</label>
+        <input type="text" id="email" formControlName="email">
+        <div *ngIf="inscriptionForm.get('email')?.hasError('required')">
+            Email is required
+        </div>
+        <div *ngIf="inscriptionForm.get('email')?.hasError('email')">
+            Invalid email format
+        </div>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username">
+        <div *ngIf="inscriptionForm.get('username')?.hasError('required')">
+            Username is required
+        </div>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password">
+        <div *ngIf="inscriptionForm.get('password')?.hasError('required')">
+            Password is required
+        </div>
+        <div *ngIf="inscriptionForm.get('password')?.hasError('minlength')">
+            Password should be at least 6 characters
+        </div>
+  
+    <button type="submit" [disabled]="!inscriptionForm.valid">Inscription</button>
+</form>
+
+</div>
