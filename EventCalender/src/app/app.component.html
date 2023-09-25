@@ -14,15 +14,30 @@
   </div>
   <span [ngSwitch]="view">
     <mwl-calendar-month-view 
-    *ngSwitchCase="CalendarView.Month"
-    [viewDate]="viewDate"
-    [events]="events"
-    [excludeDays]="[0, 6]"
-    [activeDayIsOpen]="activeDayIsOpen"
-    (dayClicked)="dayClicked($event.day)"
-    locale="fr"
+      *ngSwitchCase="CalendarView.Month"
+      [viewDate]="viewDate"
+      [events]="events"
+      [excludeDays]="[0, 6]"
+      [activeDayIsOpen]="activeDayIsOpen"
+      (dayClicked)="dayClicked($event.day)"
+      locale="fr"
     ></mwl-calendar-month-view>
-    <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="events" locale="fr" [excludeDays]="[0, 6]"></mwl-calendar-week-view>
-    <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="events" locale="fr"></mwl-calendar-day-view>
+    <mwl-calendar-week-view
+      *ngSwitchCase="CalendarView.Week"
+      [viewDate]="viewDate"
+      [events]="events"
+      locale="fr"
+      [excludeDays]="[0, 6]"
+      [dayStartHour]="9"
+      [dayEndHour]="18"
+    ></mwl-calendar-week-view>
+    <mwl-calendar-day-view 
+      *ngSwitchCase="CalendarView.Day" 
+      [viewDate]="viewDate" 
+      [events]="events" 
+      locale="fr"
+      [dayStartHour]="9"
+      [dayEndHour]="18"
+    ></mwl-calendar-day-view>
   </span>
 </div>
