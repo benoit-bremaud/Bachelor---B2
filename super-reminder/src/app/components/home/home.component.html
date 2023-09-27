@@ -1,0 +1,17 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" opened>
+        <div id="list-title">My Lists</div>
+        <div id="lists">
+            <button mat-button class="selected" *ngFor='let todoList of todoListsArray'
+            [ngClass]="{'selected': todoList.id == selectedTodoList.id}"
+            (click)="selectTodoList(todoList)">{{todoList.name}}</button>
+            <app-new-list-input (itemAdded)="onListAdded()"></app-new-list-input>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content> 
+        <div class="container" *ngIf="todoListsArray.length > 0">
+            <app-new-todo-input [todoList]="selectedTodoList"></app-new-todo-input>
+            <app-todo-list [todoList]="selectedTodoList.todos"></app-todo-list>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
