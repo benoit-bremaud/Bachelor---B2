@@ -1,0 +1,13 @@
+<!-- This creates a level 2 heading styled by Angular Material for the dialog title -->
+<h2 mat-dialog-title>{{title}}</h2>
+
+<!-- This section contains the content of the dialog -->
+<mat-dialog-content>
+    {{text}} <!-- This is the content inside the dialog -->
+</mat-dialog-content>
+
+<!-- This section contains the dialog actions/bottons aligned to the end -->
+<mat-dialog-actions align="end">
+    <!-- This is a button with raised styling and a primary color. It will close the dialog when clicked -->
+    <button mat-raised-button color="primary" mat-dialog-close>{{labelOk}}</button>
+</mat-dialog-actions>

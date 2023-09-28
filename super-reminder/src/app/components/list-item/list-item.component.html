@@ -2,12 +2,12 @@
     <div id="list-item-check">
         <mat-checkbox color="primary" [(ngModel)]="listItem.completed"></mat-checkbox>
     </div>
-    <div id="list-item-content">
+    <div id="list-item-content" (click)="openDialog()">
         <div class="title"> {{listItem.title}} </div>
         <div class="due-date">{{listItem.dueDate}}</div>
     </div>
     <div id="list-item-options">
-        <button id="btn-favourite" mat-button (click)="toggleFavourite()"><mat-icon [ngClass]="{'material-icons-outlined': !listItem.favourite}">grade</mat-icon></button>
-
+        <button id="btn-favourite" mat-button (click)="toggleFavourite()"><mat-icon [ngClass]="{'material-icons-outlined': !listItem.favourite}">grade</mat-icon>
+        </button>
     </div>
 </div>

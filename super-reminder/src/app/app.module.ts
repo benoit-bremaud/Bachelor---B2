@@ -16,6 +16,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { NewListInputComponent } from './components/new-list-input/new-list-input.component';
 import { NewTodoInputComponent } from './components/new-todo-input/new-todo-input.component';
 import { MatInputModule } from '@angular/material/input'
+import { MatDialogModule } from "@angular/material/dialog";
+import { DialogInformationComponent } from './components/dialog-information/dialog-information.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { MatInputModule } from '@angular/material/input'
     ListItemComponent,
     TodoListComponent,
     NewListInputComponent,
-    NewTodoInputComponent
+    NewTodoInputComponent,
+    DialogInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { MatInputModule } from '@angular/material/input'
     MatIconModule,
     MatSidenavModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
