@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from "@angular/material/button";
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { MatCheckboxModule } from '@angular/material/checkbox'
@@ -19,6 +19,8 @@ import { MatInputModule } from '@angular/material/input'
 import { MatDialogModule } from "@angular/material/dialog";
 import { DialogInformationComponent } from './components/dialog-information/dialog-information.component';
 import { DialogQuestionComponent } from './components/dialog-question/dialog-question.component';
+import { MatCardModule } from '@angular/material/card';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { DialogQuestionComponent } from './components/dialog-question/dialog-que
     NewListInputComponent,
     NewTodoInputComponent,
     DialogInformationComponent,
-    DialogQuestionComponent
+    DialogQuestionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { DialogQuestionComponent } from './components/dialog-question/dialog-que
     MatSidenavModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
