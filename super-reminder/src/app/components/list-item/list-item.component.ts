@@ -2,6 +2,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogInformationComponent } from '../dialog-information/dialog-information.component';
+import { DialogQuestionComponent } from '../dialog-question/dialog-question.component';
 
 // Angular component declaration with selector, template, and styles
 @Component({
@@ -31,13 +32,18 @@ export class ListItemComponent implements OnInit {
 
   // Function to open a dialog
   openDialog() {
-    this.dialog.open(DialogInformationComponent, {
+    const myDialog = this.dialog.open(DialogQuestionComponent, {
       disableClose: true, // Disables closing the dialog by clicking outside or pressing Escape
       data: {
         title: 'Mon titre', // Title for the dialog
         text: 'Bien !! T\'as vu !!', // Text content for the dialog
-        labelOK: 'Vas-y !! Clique !!' // Label for the 'OK' button in the dialog
+        // labelOK: 'Vas-y !! Clique !!' // Label for the 'OK' button in the dialog
+        labelNo: 'Finalement non merci',
+        labelYes: 'Vas-y!'
       }
+    });
+    myDialog.afterClosed().subscribe(result => {
+      console.log(result);
     });
   }
 }

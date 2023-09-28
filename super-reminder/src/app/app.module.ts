@@ -18,6 +18,7 @@ import { NewTodoInputComponent } from './components/new-todo-input/new-todo-inpu
 import { MatInputModule } from '@angular/material/input'
 import { MatDialogModule } from "@angular/material/dialog";
 import { DialogInformationComponent } from './components/dialog-information/dialog-information.component';
+import { DialogQuestionComponent } from './components/dialog-question/dialog-question.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DialogInformationComponent } from './components/dialog-information/dial
     TodoListComponent,
     NewListInputComponent,
     NewTodoInputComponent,
-    DialogInformationComponent
+    DialogInformationComponent,
+    DialogQuestionComponent
   ],
   imports: [
     BrowserModule,
